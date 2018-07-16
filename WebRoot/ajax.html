@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js">
+</script>
+<script>
+function btnOk_click(){
+    var strUsername = $("#txtUsername").val();
+    var strPwd = $("#txtPwd").val();
+    if(strUsername==""){
+        alert("请输入用户名！");
+        $("#txtUsername").focus();
+        return false
+    }
+    if(strPwd==""){
+        alert("请输入密码！");
+        $("#txtPwd").focus();
+        return false
+    }
+    $.ajax({
+        type: "get",
+        url: "/weather/login?user=" + strUsername + "&password=" + strPwd,
+        cache: false,
+        success: function(data, textStatus){
+          	alert("数据: \n" + data + "\n状态: " + textStatus);
+         },
+        error: function(){
+            alert("参数出错，请与管理员联系!");
+        }           
+    });
+}
+</script>
+</head>
+<body>
+Input name: <input type="text" name="firstname" id="txtUsername"><br>
+Input password: <input type="text" name="lastname" id="txtPwd"><br>
+<button type="button" onclick="btnOk_click()">提交</button>
+</body>
+</html>

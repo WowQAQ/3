@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js">
+</script>
+<script>
+function btnOk_click(){
+    var cityname = $("#cityname").val();
+    if(cityname==""){
+        alert("请输入用户名！");
+        $("#cityname").focus();
+        return false
+    }
+    $.ajax({
+        type: "get",
+        url: "http://v.juhe.cn/weather/index?dtype=json&format=1&key=0970061a60c403c097f141a4a5ab6469&cityname="+cityname,
+	    dataType: "jsonp",
+        crossDomain: true,
+	    cache: false,
+        success: function(data, textStatus){
+          	//alert("数据: \n" + data + "\n状态: " + textStatus);
+          	var result = data.result;
+          	var sk = result.sk;
+          	$("#result").text(sk.temp + " " + 
+          			sk.wind_direction + " " + 
+          			sk.wind_strength + " " +
+          			sk.humidity +  " " + 
+          			sk.time);
+         },
+        error: function(){
+            alert("参数出错，请与管理员联系!");
+        }           
+    });
+   
+}
+</script>
+</head>
+<body>
+输入城市名: <input type="text" name="cityname" id="cityname"><br>
+
+<button type="button" onclick="btnOk_click()">查询天气预报</button>
+<h4> 查询结果：</h4>
+<p id="result">  </p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>答题</title>
+    <script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #div-btn{
+           text-align: center;
+        }
+        #btn-ans{
+            text-align: center;
+            width: 150px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        	    /////////////
+        	    var standard="CCCC";
+        	    $("#t1").text("中世纪后期位于东西方之间的某个军事强国，占据了重要的地理位置，控制了亚欧商路。这个国家是");
+        		$("#a11").html("西罗马帝国");
+        		//////////////
+        		
+        	    $("#btn-ans").click(function(){
+        			var s1 = $("input[name=radiobutton1]:checked").val();
+        			var s2 = $("input[name=radiobutton2]:checked").val();
+        			var s3 = $("input[name=radiobutton3]:checked").val();
+        			var s4 = $("input[name=radiobutton4]:checked").val();
+                alert("已交卷\n我的作答是:" + s1+s2+s3+s4 + "\n我的得分是: 100分" +"\n谢谢");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+<h3 align="center">第一题</h3>
+<p id="t1"> 题目有待从数据库读取 </p>
+    <input type="radio" name="radiobutton1" value="A" checked><span id="a11">选项有待从数据库读取</span><br>
+    <input type="radio" name="radiobutton1" value="B"><span id="a12">法兰克王国</span><br>
+    <input type="radio" name="radiobutton1" value="C"><span id="a13">拜占庭帝国</span><br>
+    <input type="radio" name="radiobutton1" value="D"><span id="a14">奥斯曼帝国</span><br>
+<h3 align="center">第二题</h3>
+<p id="t2">一个文弱书生最终成为驾驭干军万马的最高统帅，成就了“无湘不成军”的传奇，被誉为“中兴第一名臣”和“洋务派之父”。此人是</p>
+    <input type="radio" name="radiobutton2" value="A" checked><span id="a21">曾国藩</span><br>
+    <input type="radio" name="radiobutton2" value="B"><span id="a22">李鸿章</span><br>
+    <input type="radio" name="radiobutton2" value="C"><span id="a23">奕</span><br>
+    <input type="radio" name="radiobutton2" value="D"><span id="a24">左宗棠</span><br>
+<h3 align="center">第三题</h3>
+<p id="t3">被称为中国历史上“开天辟地的大事变”，从此“中国革命的面貌焕然一新”的重要事件是</p>
+    <input type="radio" name="radiobutton3" value="A" checked><span id="a31">辛亥革命胜利</span><br>
+    <input type="radio" name="radiobutton3" value="B"><span id="a32">五四运动爆发</span><br>
+    <input type="radio" name="radiobutton3" value="C"><span id="a33">中国共产党诞生</span><br>
+    <input type="radio" name="radiobutton3" value="D"><span id="a34">中华人民共和国成立</span><br>
+<h3 align="center">第四题</h3>
+<p id="t4">有学者认为河南偃师二里头文化遗址是传说中的夏朝都邑。以下考古发现中，最有力的证据是</p>
+    <input type="radio" name="radiobutton4" value="A" checked><span id="a41">石制农具</span><br>
+    <input type="radio" name="radiobutton4" value="B"><span id="a42">青铜礼器</span><br>
+    <input type="radio" name="radiobutton4" value="C"><span id="a43">宫殿遗址</span><br>
+    <input type="radio" name="radiobutton4" value="D"><span id="a44">家畜遗骨</span><br>
+          
+    <br>
+    <div id="div-btn">
+    <button id="btn-ans" type="button" class="btn btn-success">交 卷</button>
+    </div>
+    <br>
+    <br>
+</div>
+</body>
+</html>
